@@ -18,27 +18,31 @@
 ##########################################################
 
   # should catch invalid args format
-  add wrong args wrong args
-  add Valid Name p/12345 valid@email.butNoPrefix
-  add Valid Name 12345 e/valid@email.butPhonePrefixMissing
+  add wrong args wrong args wrong args
+  add Valid Name p/12345 valid@email.butNoPrefix d/19-01-1234
+  add Valid Name 12345 e/valid@email.butPhonePrefixMissing d/12-34-5678
+  add Valid Name p/12345 e/valid@email.butDOBPrefixMissing 12-34-567
   
   # should catch invalid person data
-  add []\[;] p/12345 e/valid@e.mail
-  add Valid Name p/not_numbers e/valid@e.mail
-  add Valid Name p/12345 e/notAnEmail
+  add []\[;] p/12345 e/valid@e.mail d/12-34-567
+  add Valid Name p/not_numbers e/valid@e.mail d/12-34-5678
+  add Valid Name p/12345 e/notAnEmail d/123-45-678
+  add Valid Name p/12345 e/valid@mail.com d/12-34-invalid
 
   # should add correctly
-  add Adam Brown p/111111 e/adam@gmail.com
+  add Adam Brown p/111111 e/adam@gmail.com d/11-11-1111
   list
-  add Betsy Choo p/222222 e/benchoo@nus.edu.sg
+  add Betsy Choo p/222222 e/benchoo@nus.edu.sg d/22-22-2222
   list
 
   # order of phone and email should not matter
-  add Charlie Dickson e/charlie.d@nus.edu.sg p/333333
+  add Charlie Dickson e/charlie.d@nus.edu.sg p/333333 d/11-11-1111
   list
-  add Dickson Ee e/dickson@nus.edu.sg p/444444
+  add Dickson Ee e/dickson@nus.edu.sg d/66-66-6666 p/444444
   list
-  add Esther Potato p/555555 e/esther@notreal.potato
+  add Esther Potato p/555555 e/esther@notreal.potato d/77-77-7777
+  list
+  add Franky Star d/88-88-8888 p/99999 e/franky@bikini.bottom
   list
 
 ##########################################################
